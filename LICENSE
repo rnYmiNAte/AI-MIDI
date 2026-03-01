@@ -1,0 +1,13 @@
+### Quick Setup Steps
+1. Create new repo on GitHub
+2. Copy the structure above (create folders/files)
+3. Commit & push
+4. Add a small `.mp3`/`.wav` to `audio/` → watch Actions run
+
+### Variations / Upgrades
+- **Piano only** → swap `basic-pitch` → `piano_transcription_inference` (better note/velocity accuracy)
+- **Add tests** → folder `tests/` with sample audio + expected MIDI hashes
+- **Web frontend** → add Streamlit / Flask app in `/app/` (but Actions would still handle heavy lifting)
+- **Multiple models** → add arg to choose model in workflow
+
+Let me know your main use case (piano-focused? full band? dataset creation? local + CI combo?) and I can refine the structure further.
