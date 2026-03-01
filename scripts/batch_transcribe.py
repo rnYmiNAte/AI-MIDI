@@ -1,6 +1,7 @@
 import argparse
 from pathlib import Path
 from basic_pitch.inference import predict_and_save
+from basic_pitch import ICASSP_2022_MODEL_PATH   # ← Add this import
 
 def main():
     parser = argparse.ArgumentParser()
@@ -22,12 +23,13 @@ def main():
 
     print(f"Transcribing {len(audio_files)} files...")
     predict_and_save(
-        [str(f) for f in audio_files],
-        str(output_dir),
+        audio_path_list=[str(f) for f in audio_files],
+        output_directory=str(output_dir),
         save_midi=True,
         sonify_midi=False,
         save_model_outputs=False,
         save_notes=False,
+        model_or_model_path=ICASSP_2022_MODEL_PATH  # ← This fixes the error
     )
     print("Batch transcription complete.")
 
